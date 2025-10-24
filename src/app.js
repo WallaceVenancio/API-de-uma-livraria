@@ -1,6 +1,8 @@
 import express from "express";
 
 const app = express();
+//middleware
+app.use(express.json());
 
 const livros = [{
     id: 1,
@@ -19,5 +21,10 @@ app.get("/", (req, res)=> {
 app.get("/livros", (req, res) => {
     res.status(200).json(livros);
 });
+
+app.post("/livros", (req, res)=>{
+    livros.push(req.body);
+    res.status(201).send("Livro adicionado com sucesso!")
+})
 
 export default app;
