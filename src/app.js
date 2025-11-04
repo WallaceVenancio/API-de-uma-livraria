@@ -1,4 +1,16 @@
 import express from "express";
+import conectaNaDataBase from "./config/dbConnet.js";
+
+const conexao = await conectaNaDataBase();
+
+conexao.on("error", (erro) => {
+    console.error("Erro de conexão", erro);
+})
+
+conexao.once("open", () => {
+    console.log("Conexão com o banco feita com sucesso");
+    
+})
 
 const app = express();
 //middleware
@@ -53,4 +65,3 @@ app.delete("/livros/:id", (req, res) =>{
 //CRUD (CREAT, READ, UPDATE, DELETE)
 export default app;
 
-//mongodb+srv://admin:<db_password>@cluster0.h0jkz5i.mongodb.net/?appName=Cluster0
