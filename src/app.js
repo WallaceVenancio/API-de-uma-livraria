@@ -50,4 +50,7 @@ app.delete("/livros/:id", (req, res) =>{
     res.status(200).send("Livro removido com sucesso!")
 });
 
+//CRUD (CREAT, READ, UPDATE, DELETE)
 export default app;
+
+//mongodb+srv://admin:<db_password>@cluster0.h0jkz5i.mongodb.net/?appName=Cluster0
