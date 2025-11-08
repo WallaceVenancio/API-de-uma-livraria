@@ -17,10 +17,6 @@ const app = express();
 //middleware
 app.use(express.json());
 
-app.get("/livros", async (req, res)=> {
-    const listaLivros = await livro.find({})
-    res.status(200).send(listaLivros);
-});
 
 app.get("/livros", (req, res) => {
     res.status(200).json(livros);
