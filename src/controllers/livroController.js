@@ -1,3 +1,4 @@
+import { json } from "express";
 import livro from "../models/Livro.js";
 
 class LivroController {
@@ -33,12 +34,22 @@ class LivroController {
         static async atualizarLivro (req, res) {
         try {
             const id = req.params.id
-            await livro.findByIdAndUpdate(id, req.obdy)
+            await livro.findByIdAndUpdate(id, req.body)
             res.status(200).send({message: "Livro atualizado" });
         } catch (erro){
             res.status(500).json({message: `${erro.message}- falha na atualização`})
         }
     };
+
+    static async deletarLivro (req, res) {
+        try {
+            const removerLivroPorId = req.params.id
+            await livro.findByIdAndDelete(removerLivroPorId)
+            res.status(200).send({message: "Livro deletado com sucesso!"}) 
+        } catch (erro){
+            res.status(500).json({message: `${erro.message} - falha ao deletar o livro`})
+        }
+    }
 
 };
 
