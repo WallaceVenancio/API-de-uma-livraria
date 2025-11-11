@@ -1,4 +1,5 @@
 import mongoose, { mongo } from "mongoose";
+import { autorSchema } from "./Autor.js";
 
 //Schema é um objeto de instrução
 const livroSchema = new mongoose.Schema({
@@ -7,6 +8,7 @@ const livroSchema = new mongoose.Schema({
     editora: {type: String },
     preco: {type: Number},
     paginas: {type: Number},
+    autor: autorSchema
 }, { versionKey: false});
 
 const livro = mongoose.model("livros", livroSchema);
