@@ -9,7 +9,7 @@ Uma API RESTful para gerenciar uma livraria, com operações de **CRUD** (Criar,
 - Node.js  
 - Express.js  
 - MongoDB  
-- Mongoose   
+- Mongoose (ou driver Mongo, dependendo da implementação)  
 - Postman (para testar os endpoints)  
 
 ---
@@ -27,23 +27,15 @@ Uma API RESTful para gerenciar uma livraria, com operações de **CRUD** (Criar,
 1. Clone o repositório:  
    ```bash
    git clone https://github.com/WallaceVenancio/API-de-uma-livraria.git
-Entre na pasta do projeto:
 
-bash
-Copiar código
-cd API-de-uma-livraria
-Instale as dependências:
+2. Entre na pasta do projeto:
+   cd API-de-uma-livraria
 
-bash
-Copiar código
-npm install
-Inicie o servidor em modo de desenvolvimento:
+3. Instale as dependências:
+   npm install
 
-bash
-Copiar código
-npm run dev
-A API estará disponível em:
+4. Inicie o servidor em modo de desenvolvimento:
+   npm run dev
 
-arduino
-Copiar código
-http://localhost:3000/
+5. A API estará disponível em:
+   http://localhost:3000/
